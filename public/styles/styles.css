@@ -70,8 +70,6 @@ ul {
     flex-direction: row;
 }
 
-.checkbox {}
-
 .delete-wrapper {
     display: inline-block;
     margin-left: auto;
