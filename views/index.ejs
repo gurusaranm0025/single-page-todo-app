@@ -13,7 +13,7 @@
       <% if(locals.todos) { %> <% todos.forEach(todo => { %>
       <li class="todo-element">
         <div class="todo-wrapper">
-          <input class="checkbox" type="radio" name="" id="done" />
+          <input class="checkbox" type="checkbox" name="" id="done" />
           <span aria-label="done"><%=todo.todo %></span>
         </div>
         <div class="delete-wrapper">
