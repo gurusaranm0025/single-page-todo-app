@@ -1,0 +1,45 @@
+<%- include('./partials/header.ejs') %>
+<!-- body-content -->
+<div class="flex-wrapper">
+  <div class="wrapper">
+    <form action="/" method="post" class="todo-input-form">
+      <div class="todo-input-wrapper">
+        <input type="text" name="todo" class="todo-input" />
+        <button class="add-todo" type="submit"><span>Add</span></button>
+      </div>
+    </form>
+
+    <ul>
+      <% if(locals.todos) { %> <% todos.forEach(todo => { %>
+      <li class="todo-element">
+        <div class="todo-wrapper">
+          <input class="checkbox" type="radio" name="" id="done" />
+          <span aria-label="done"><%=todo.todo %></span>
+        </div>
+        <div class="delete-wrapper">
+          <form action="/delete" method="post" class="delete">
+            <button type="submit" name="id" value="<%= todo.id %>">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </li>
+      <% }) %> <% } %>
+    </ul>
+  </div>
+</div>
+<!-- body-content -->
+<%- include('./partials/footer.ejs') %>
